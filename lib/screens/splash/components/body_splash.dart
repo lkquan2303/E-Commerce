@@ -1,3 +1,5 @@
+import 'package:e_commerce/config/constants.dart';
+import 'package:e_commerce/config/size_config.dart';
 import 'package:e_commerce/screens/splash/components/splash_content.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +9,7 @@ class BodySplash extends StatefulWidget {
 }
 
 class _BodySplashState extends State<BodySplash> {
+  int currentPage = 0;
   List<Map<String, String>> splashData = [
     {
       "text": "Welcome to My Feeling, Let's shop!",
@@ -29,6 +32,11 @@ class _BodySplashState extends State<BodySplash> {
           Expanded(
             flex: 3,
             child: PageView.builder(
+              onPageChanged: (value) {
+                setState(() {
+                  currentPage = value;
+                });
+              },
               itemCount: splashData.length,
               itemBuilder: (context, index) => SplashContent(
                 header: splashData[index]["text"],
@@ -38,10 +46,56 @@ class _BodySplashState extends State<BodySplash> {
           ),
           Expanded(
             flex: 2,
-            child: Container(color: Colors.white),
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: getProportionateScreenWidth(20),
+              ),
+              child: Column(
+                children: [
+                  Spacer(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      splashData.length,
+                      (index) => buildDot(index: index),
+                    ),
+                  ),
+                  Spacer(),
+                  SizedBox(
+                    height: getProportionateScreenHeight(56),
+                    width: double.infinity,
+                    child: FlatButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        onPressed: () {},
+                        child: Text(
+                          "Continue",
+                          style: TextStyle(
+                              fontSize: getProportionateScreenWidth(18),
+                              color: Colors.white),
+                        ),
+                        color: kPrimaryColor),
+                  ),
+                  Spacer()
+                ],
+              ),
+            ),
           ),
         ],
       ),
+    );
+  }
+
+  AnimatedContainer buildDot({int index}) {
+    return AnimatedContainer(
+      duration: kAnimationDuration,
+      margin: EdgeInsets.only(right: 5),
+      height: 6,
+      width: currentPage == index ? 25 : 6,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(3),
+          color: currentPage == index ? kPrimaryColor : Colors.grey),
     );
   }
 }
