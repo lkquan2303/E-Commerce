@@ -3,6 +3,8 @@ import 'package:e_commerce/config/size_config.dart';
 import 'package:e_commerce/screens/splash/components/splash_content.dart';
 import 'package:flutter/material.dart';
 
+import '../../../components/default_button.dart';
+
 class BodySplash extends StatefulWidget {
   @override
   _BodySplashState createState() => _BodySplashState();
@@ -32,9 +34,9 @@ class _BodySplashState extends State<BodySplash> {
           Expanded(
             flex: 3,
             child: PageView.builder(
-              onPageChanged: (value) {
+              onPageChanged: (index) {
                 setState(() {
-                  currentPage = value;
+                  currentPage = index;
                 });
               },
               itemCount: splashData.length,
@@ -61,21 +63,13 @@ class _BodySplashState extends State<BodySplash> {
                     ),
                   ),
                   Spacer(),
-                  SizedBox(
-                    height: getProportionateScreenHeight(56),
-                    width: double.infinity,
-                    child: FlatButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          "Continue",
-                          style: TextStyle(
-                              fontSize: getProportionateScreenWidth(18),
-                              color: Colors.white),
-                        ),
-                        color: kPrimaryColor),
+                  DefaultButton(
+                    buttonText: "Continue",
+                    buttonPress: () {
+                      setState(() {
+                        //TODO
+                      });
+                    },
                   ),
                   Spacer()
                 ],

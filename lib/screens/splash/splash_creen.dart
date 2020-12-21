@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'components/body_splash.dart';
 
-class SplashCreen extends StatelessWidget {
+class SplashScreen extends StatelessWidget {
+  static String routName = "/splash";
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
