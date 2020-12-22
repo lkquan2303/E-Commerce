@@ -1,5 +1,6 @@
 import 'package:e_commerce/config/constants.dart';
 import 'package:e_commerce/config/size_config.dart';
+import 'package:e_commerce/screens/sign_in/sign_in.dart';
 import 'package:e_commerce/screens/splash/components/splash_content.dart';
 import 'package:flutter/material.dart';
 
@@ -66,9 +67,7 @@ class _BodySplashState extends State<BodySplash> {
                   DefaultButton(
                     buttonText: "Continue",
                     buttonPress: () {
-                      setState(() {
-                        //TODO
-                      });
+                      Navigator.pushNamed(context, SignInScreen.routName);
                     },
                   ),
                   Spacer()

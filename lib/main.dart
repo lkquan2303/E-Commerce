@@ -14,21 +14,33 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'E-Commerce',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        fontFamily: "Muli",
-        textTheme: TextTheme(
-          bodyText1: TextStyle(
-            color: kTextColor,
-          ),
-          bodyText2: TextStyle(
-            color: kTextColor,
-          ),
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: buildTheme(),
       initialRoute: SplashScreen.routName,
       routes: routes,
+    );
+  }
+
+  ThemeData buildTheme() {
+    return ThemeData(
+      appBarTheme: AppBarTheme(
+        color: Colors.white,
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
+        textTheme: TextTheme(
+          headline6: TextStyle(color: Colors.grey, fontSize: 18),
+        ),
+      ),
+      scaffoldBackgroundColor: Colors.white,
+      fontFamily: "Muli",
+      textTheme: TextTheme(
+        bodyText1: TextStyle(
+          color: kTextColor,
+        ),
+        bodyText2: TextStyle(
+          color: kTextColor,
+        ),
+      ),
+      visualDensity: VisualDensity.adaptivePlatformDensity,
     );
   }
 }
