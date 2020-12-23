@@ -10,7 +10,12 @@ class SignInScreen extends StatelessWidget {
         title: Text("Sign In"),
         centerTitle: true,
       ),
-      body: BodySignIn(),
+      body: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).requestFocus(new FocusNode());
+        },
+        child: BodySignIn(),
+      ),
     );
   }
 }

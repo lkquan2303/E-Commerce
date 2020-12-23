@@ -52,13 +52,15 @@ class _SignFormState extends State<SignForm> {
       child: Column(
         children: [
           TextFormField(
+            keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               floatingLabelBehavior: FloatingLabelBehavior.always,
               labelText: "Email",
               hintText: "Enter your email",
               suffixIcon: CustomSuffixIcon(image: "assets/icons/Mail.svg"),
+              labelStyle: TextStyle(color: kTextColor),
             ),
-            style: TextStyle(color: kTextColor),
+            style: TextStyle(decoration: TextDecoration.none),
           ),
           SizedBox(
             height: getProportionateScreenHeight(20),
