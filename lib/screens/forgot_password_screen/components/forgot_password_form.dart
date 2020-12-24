@@ -25,6 +25,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                 setState(() {
                   error.remove(kEmailNullError);
                 });
+                return "";
               } else if (!emailValidatorRegExp.hasMatch(value) &&
                   error.contains(kInvalidEmailError)) {
                 error.remove(kInvalidEmailError);
@@ -35,11 +36,13 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                 setState(() {
                   error.add(kEmailNullError);
                 });
+                return "";
               } else if (!emailValidatorRegExp.hasMatch(value) &&
                   !error.contains(kInvalidEmailError)) {
                 setState(() {
                   error.add(kInvalidEmailError);
                 });
+                return "";
               }
               return null;
             },
