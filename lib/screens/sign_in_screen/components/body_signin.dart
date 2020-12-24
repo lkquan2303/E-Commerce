@@ -1,5 +1,5 @@
 import 'package:e_commerce/config/size_config.dart';
-import 'package:e_commerce/screens/sign_in/components/sign_in_form.dart';
+import 'package:e_commerce/screens/sign_in_screen/components/sign_in_form.dart';
 import 'package:flutter/material.dart';
 
 class BodySignIn extends StatelessWidget {

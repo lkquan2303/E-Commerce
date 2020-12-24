@@ -3,8 +3,8 @@ import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/components/form_error.dart';
 import 'package:e_commerce/config/constants.dart';
 import 'package:e_commerce/config/size_config.dart';
-import 'package:e_commerce/screens/forgot_password/forgot_password.dart';
-import 'package:e_commerce/screens/sign_in/components/social_sign_in.dart';
+import 'package:e_commerce/screens/forgot_password_screen/forgot_password.dart';
+import 'package:e_commerce/screens/sign_in_screen/components/social_sign_in.dart';
 import 'package:flutter/material.dart';
 
 class SignForm extends StatefulWidget {
