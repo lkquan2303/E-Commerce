@@ -1,7 +1,7 @@
 import 'package:e_commerce/config/constants.dart';
 import 'package:e_commerce/config/size_config.dart';
 import 'package:e_commerce/screens/sign_in/sign_in.dart';
-import 'package:e_commerce/screens/splash/components/splash_content.dart';
+import 'package:e_commerce/screens/splash_screen/components/splash_content.dart';
 import 'package:flutter/material.dart';
 
 import '../../../components/default_button.dart';
@@ -15,7 +15,7 @@ class _BodySplashState extends State<BodySplash> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
     {
-      "text": "Welcome to My Feeling, Let's shop123!",
+      "text": "Welcome to My Feeling, Let's shop!",
       "image": "assets/images/splash_1.png"
     },
     {
