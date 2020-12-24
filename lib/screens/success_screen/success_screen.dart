@@ -5,6 +5,11 @@ class SuccessScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Login Success"),
+      ),
+      body: SuccessScreen(),
+    );
   }
 }

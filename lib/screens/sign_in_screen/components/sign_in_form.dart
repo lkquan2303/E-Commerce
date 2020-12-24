@@ -3,8 +3,9 @@ import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/components/form_error.dart';
 import 'package:e_commerce/config/constants.dart';
 import 'package:e_commerce/config/size_config.dart';
-import 'package:e_commerce/screens/forgot_password_screen/forgot_password.dart';
+import 'package:e_commerce/screens/forgot_password_screen/forgot_password_screen.dart';
 import 'package:e_commerce/screens/sign_in_screen/components/social_sign_in.dart';
+import 'package:e_commerce/screens/success_screen/success_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignForm extends StatefulWidget {
@@ -58,10 +59,13 @@ class _SignFormState extends State<SignForm> {
           SizedBox(
             height: getProportionateScreenHeight(20),
           ),
+
+          //MARK: Continue Button SignIn
           DefaultButton(
             buttonPress: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
+                Navigator.pushNamed(context, SuccessScreen.routName);
               }
             },
             buttonText: "Continue",
@@ -69,6 +73,8 @@ class _SignFormState extends State<SignForm> {
           SizedBox(
             height: getProportionateScreenHeight(50),
           ),
+
+          //MARK: Social Login
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -83,6 +89,8 @@ class _SignFormState extends State<SignForm> {
           SizedBox(
             height: getProportionateScreenHeight(20),
           ),
+
+          //MARK: Signup
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -103,6 +111,7 @@ class _SignFormState extends State<SignForm> {
     );
   }
 
+//MARK: Custom TextFormField Password
   TextFormField buildPasswordFormField() {
     return TextFormField(
       onSaved: (newValue) => email = newValue,
@@ -111,6 +120,7 @@ class _SignFormState extends State<SignForm> {
           setState(() {
             errors.add(kPassNullError);
           });
+          return "";
         }
         return null;
       },
@@ -119,6 +129,7 @@ class _SignFormState extends State<SignForm> {
           setState(() {
             errors.remove(kPassNullError);
           });
+          return "";
         }
       },
       obscureText: true,
@@ -131,6 +142,7 @@ class _SignFormState extends State<SignForm> {
     );
   }
 
+//MARK: Custom TextFormField Email
   TextFormField buildEmailFormField() {
     return TextFormField(
       onSaved: (newValue) => password = newValue,
@@ -139,10 +151,12 @@ class _SignFormState extends State<SignForm> {
           setState(() {
             errors.remove(kEmailNullError);
           });
+          return "";
         } else if (emailValidatorRegExp.hasMatch(value) &&
             errors.contains(kInvalidEmailError)) {
           setState(() {
             errors.remove(kInvalidEmailError);
+            return "";
           });
         }
         return null;
@@ -152,10 +166,12 @@ class _SignFormState extends State<SignForm> {
           setState(() {
             errors.add(kEmailNullError);
           });
+          return "";
         } else if (!emailValidatorRegExp.hasMatch(value) &&
             !errors.contains(kInvalidEmailError)) {
           setState(() {
             errors.add(kInvalidEmailError);
+            return "";
           });
         }
         return null;
