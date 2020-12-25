@@ -8,12 +8,12 @@ import 'package:e_commerce/screens/sign_in_screen/components/social_sign_in.dart
 import 'package:e_commerce/screens/success_screen/success_screen.dart';
 import 'package:flutter/material.dart';
 
-class SignForm extends StatefulWidget {
+class SignInForm extends StatefulWidget {
   @override
-  _SignFormState createState() => _SignFormState();
+  _SignInFormState createState() => _SignInFormState();
 }
 
-class _SignFormState extends State<SignForm> {
+class _SignInFormState extends State<SignInForm> {
   final _formKey = GlobalKey<FormState>();
   final List<String> errors = [];
   String email;
@@ -134,11 +134,12 @@ class _SignFormState extends State<SignForm> {
       },
       obscureText: true,
       decoration: InputDecoration(
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          labelText: "Password",
-          hintText: "Enter Your Password",
-          suffixIcon: CustomSuffixIcon(image: "assets/icons/Lock.svg"),
-          labelStyle: TextStyle(color: kTextColor)),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        labelText: "Password",
+        hintText: "Enter Your Password",
+        suffixIcon: CustomSuffixIcon(image: "assets/icons/Lock.svg"),
+        labelStyle: TextStyle(color: kTextColor),
+      ),
     );
   }
 
