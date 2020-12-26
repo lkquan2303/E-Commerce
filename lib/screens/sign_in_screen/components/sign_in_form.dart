@@ -5,6 +5,7 @@ import 'package:e_commerce/config/constants.dart';
 import 'package:e_commerce/config/size_config.dart';
 import 'package:e_commerce/screens/forgot_password_screen/forgot_password_screen.dart';
 import 'package:e_commerce/screens/sign_in_screen/components/social_sign_in.dart';
+import 'package:e_commerce/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:e_commerce/screens/success_screen/success_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -98,11 +99,16 @@ class _SignInFormState extends State<SignInForm> {
                 "Don't have an account? ",
                 style: TextStyle(fontSize: getProportionateScreenWidth(16)),
               ),
-              Text(
-                "Sign Up",
-                style: TextStyle(
-                    fontSize: getProportionateScreenWidth(16),
-                    color: kPrimaryColor),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, SignUpScreen.routName);
+                },
+                child: Text(
+                  "Sign Up",
+                  style: TextStyle(
+                      fontSize: getProportionateScreenWidth(16),
+                      color: kPrimaryColor),
+                ),
               ),
             ],
           ),

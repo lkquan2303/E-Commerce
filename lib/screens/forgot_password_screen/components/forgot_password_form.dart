@@ -3,6 +3,7 @@ import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/components/form_error.dart';
 import 'package:e_commerce/config/constants.dart';
 import 'package:e_commerce/config/size_config.dart';
+import 'package:e_commerce/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPasswordForm extends StatefulWidget {
@@ -79,10 +80,18 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                 "Don't have an account? ",
                 style: TextStyle(fontSize: getProportionateScreenWidth(15)),
               ),
-              Text("Sign Up",
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, SignUpScreen.routName);
+                },
+                child: Text(
+                  "Sign Up",
                   style: TextStyle(
-                      color: kPrimaryColor,
-                      fontSize: getProportionateScreenWidth(15)))
+                    color: kPrimaryColor,
+                    fontSize: getProportionateScreenWidth(15),
+                  ),
+                ),
+              ),
             ],
           )
         ],
