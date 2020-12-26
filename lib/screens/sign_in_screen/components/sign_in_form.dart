@@ -136,8 +136,8 @@ class _SignInFormState extends State<SignInForm> {
           setState(() {
             errors.remove(kPassNullError);
           });
-          return "";
         }
+        return null;
       },
       obscureText: true,
       decoration: InputDecoration(
@@ -164,8 +164,8 @@ class _SignInFormState extends State<SignInForm> {
             errors.contains(kInvalidEmailError)) {
           setState(() {
             errors.remove(kInvalidEmailError);
-            return "";
           });
+          return "";
         }
         return null;
       },
@@ -174,12 +174,10 @@ class _SignInFormState extends State<SignInForm> {
           setState(() {
             errors.add(kEmailNullError);
           });
-          return "";
         } else if (!emailValidatorRegExp.hasMatch(value) &&
             !errors.contains(kInvalidEmailError)) {
           setState(() {
             errors.add(kInvalidEmailError);
-            return "";
           });
         }
         return null;
@@ -192,7 +190,9 @@ class _SignInFormState extends State<SignInForm> {
         suffixIcon: CustomSuffixIcon(image: "assets/icons/Mail.svg"),
         labelStyle: TextStyle(color: kTextColor),
       ),
-      style: TextStyle(decoration: TextDecoration.none),
+      style: TextStyle(
+        decoration: TextDecoration.none,
+      ),
     );
   }
 }
