@@ -56,6 +56,13 @@ class _DetailsSignUpFormState extends State<DetailsSignUpForm> {
 
   TextFormField buildRePasswordSignUpFormField() {
     return TextFormField(
+      onChanged: (value) {
+        if (errors.contains(kPassNullError)) {
+          setState(() {
+            errors.remove(kPassNullError);
+          });
+        }
+      },
       validator: (value) {
         if (value.isEmpty && !errors.contains(kPassNullError)) {
           setState(() {
@@ -75,6 +82,13 @@ class _DetailsSignUpFormState extends State<DetailsSignUpForm> {
 
   TextFormField buildPasswordSignUpFormField() {
     return TextFormField(
+      onChanged: (value) {
+        if (errors.contains(kPassNullError)) {
+          setState(() {
+            errors.remove(kPassNullError);
+          });
+        }
+      },
       validator: (value) {
         if (value.isEmpty && !errors.contains(kPassNullError)) {
           setState(() {
@@ -98,6 +112,11 @@ class _DetailsSignUpFormState extends State<DetailsSignUpForm> {
         if (errors.contains(kEmailNullError)) {
           setState(() {
             errors.remove(kEmailNullError);
+          });
+        } else if (emailValidatorRegExp.hasMatch(value) &&
+            errors.contains(kInvalidEmailError)) {
+          setState(() {
+            errors.remove(kInvalidEmailError);
           });
         }
       },
