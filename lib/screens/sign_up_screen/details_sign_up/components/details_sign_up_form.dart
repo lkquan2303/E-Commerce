@@ -76,6 +76,7 @@ class _DetailsSignUpFormState extends State<DetailsSignUpForm> {
         labelText: "Re-Password",
         hintText: "Enter your password again",
         labelStyle: TextStyle(color: kTextColor),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
   }
@@ -102,6 +103,7 @@ class _DetailsSignUpFormState extends State<DetailsSignUpForm> {
         labelText: "Password",
         hintText: "Enter your password",
         labelStyle: TextStyle(color: kTextColor),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
   }
@@ -137,6 +139,7 @@ class _DetailsSignUpFormState extends State<DetailsSignUpForm> {
         labelText: "Email",
         hintText: "Enter your email",
         labelStyle: TextStyle(color: kTextColor),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
   }

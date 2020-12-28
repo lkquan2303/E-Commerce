@@ -1,8 +1,7 @@
-import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/components/tittle_style.dart';
 import 'package:e_commerce/config/size_config.dart';
+import 'package:e_commerce/screens/sign_in_screen/components/social_sign_in.dart';
 import 'package:e_commerce/screens/sign_up_screen/components/sign_up_form.dart';
-import 'package:e_commerce/screens/sign_up_screen/details_sign_up/details_sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 class BodySignUp extends StatelessWidget {
@@ -16,7 +15,7 @@ class BodySignUp extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: getProportionateScreenHeight(30),
+              height: getProportionateScreenHeight(20),
             ),
             Text(
               "Complete Profile",
@@ -28,13 +27,18 @@ class BodySignUp extends StatelessWidget {
             ),
             SignUpForm(),
             SizedBox(
-              height: getProportionateScreenHeight(30),
+              height: getProportionateScreenHeight(15),
             ),
-            DefaultButton(
-              buttonText: "Continue",
-              buttonPress: () {
-                Navigator.pushNamed(context, DetailsSignUpScreen.routName);
-              },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                buildSocialSignInIcon(
+                    image: "assets/icons/google-icon.svg", onTap: () {}),
+                buildSocialSignInIcon(
+                    image: "assets/icons/facebook-2.svg", onTap: () {}),
+                buildSocialSignInIcon(
+                    image: "assets/icons/twitter.svg", onTap: () {}),
+              ],
             ),
             Spacer(),
             Text(

@@ -1,5 +1,7 @@
+import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/config/size_config.dart';
 import 'package:e_commerce/screens/sign_up_screen/components/text_form_field.dart';
+import 'package:e_commerce/screens/sign_up_screen/details_sign_up/details_sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignUpForm extends StatefulWidget {
@@ -12,7 +14,7 @@ class _SignUpFormState extends State<SignUpForm> {
   Widget build(BuildContext context) {
     return Column(children: [
       SizedBox(
-        height: getProportionateScreenHeight(50),
+        height: getProportionateScreenHeight(40),
       ),
 
       //MARK: Text Field First Name
@@ -50,6 +52,15 @@ class _SignUpFormState extends State<SignUpForm> {
         lable: "Address",
         hintText: "Enter your address",
         isNumber: false,
+      ),
+      SizedBox(
+        height: getProportionateScreenHeight(30),
+      ),
+      DefaultButton(
+        buttonText: "Continue",
+        buttonPress: () {
+          Navigator.pushNamed(context, DetailsSignUpScreen.routName);
+        },
       ),
     ]);
   }
