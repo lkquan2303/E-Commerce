@@ -1,5 +1,6 @@
 import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/config/size_config.dart';
+import 'package:e_commerce/screens/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class BodySuccessScreen extends StatelessWidget {
@@ -23,7 +24,7 @@ class BodySuccessScreen extends StatelessWidget {
               EdgeInsets.symmetric(horizontal: SizeConfig.screenWidth * 0.2),
           child: DefaultButton(
             buttonText: "Back to home",
-            buttonPress: () {},
+            buttonPress: () => Navigator.pushNamed(context, HomeScreen.routName),
           ),
         ),
         Spacer(),
