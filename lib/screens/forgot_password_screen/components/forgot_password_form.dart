@@ -3,6 +3,7 @@ import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/components/form_error.dart';
 import 'package:e_commerce/config/constants.dart';
 import 'package:e_commerce/config/size_config.dart';
+import 'package:e_commerce/screens/otp_screen/otp_screen.dart';
 import 'package:e_commerce/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -29,8 +30,12 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                 return "";
               } else if (!emailValidatorRegExp.hasMatch(value) &&
                   error.contains(kInvalidEmailError)) {
-                error.remove(kInvalidEmailError);
+                setState(() {
+                  error.remove(kInvalidEmailError);
+                });
+                return "";
               }
+              return null;
             },
             validator: (value) {
               if (value.isEmpty && !error.contains(kEmailNullError)) {
@@ -67,6 +72,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
             buttonPress: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
+                Navigator.pushNamed(context, OtpScreen.routName);
               }
             },
           ),

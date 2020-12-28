@@ -179,6 +179,7 @@ class _SignInFormState extends State<SignInForm> {
           setState(() {
             errors.add(kInvalidEmailError);
           });
+          return "";
         }
         return null;
       },

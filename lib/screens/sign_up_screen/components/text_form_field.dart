@@ -6,6 +6,7 @@ TextFormField buildTextFormField(
   return TextFormField(
     keyboardType: isNumber ? TextInputType.number : TextInputType.text,
     decoration: InputDecoration(
+      floatingLabelBehavior: FloatingLabelBehavior.always,
       labelText: lable,
       hintText: hintText,
       labelStyle: TextStyle(color: kTextColor),

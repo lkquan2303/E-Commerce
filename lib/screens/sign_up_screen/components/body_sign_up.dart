@@ -8,15 +8,15 @@ import 'package:flutter/material.dart';
 class BodySignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:
-          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-      child: SizedBox(
-        width: double.infinity,
+    return SizedBox(
+      width: double.infinity,
+      child: Padding(
+        padding:
+            EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
         child: Column(
           children: [
             SizedBox(
-              height: getProportionateScreenHeight(40),
+              height: getProportionateScreenHeight(30),
             ),
             Text(
               "Complete Profile",
@@ -28,16 +28,17 @@ class BodySignUp extends StatelessWidget {
             ),
             SignUpForm(),
             SizedBox(
-              height: getProportionateScreenHeight(40),
+              height: getProportionateScreenHeight(30),
             ),
             DefaultButton(
-                buttonText: "Continue",
-                buttonPress: () {
-                  Navigator.pushNamed(context, DetailsSignUpScreen.routName);
-                }),
+              buttonText: "Continue",
+              buttonPress: () {
+                Navigator.pushNamed(context, DetailsSignUpScreen.routName);
+              },
+            ),
             Spacer(),
             Text(
-                "By continuting your confrifm that your with our Term and Condition",
+                "By continuting your confrirm that you agree with our Term and Condition",
                 textAlign: TextAlign.center),
             Spacer(),
           ],
