@@ -138,6 +138,7 @@ class _SignInFormState extends State<SignInForm> {
           });
           return "";
         }
+        return null;
       },
       obscureText: true,
       decoration: InputDecoration(
@@ -164,8 +165,8 @@ class _SignInFormState extends State<SignInForm> {
             errors.contains(kInvalidEmailError)) {
           setState(() {
             errors.remove(kInvalidEmailError);
-            return "";
           });
+          return "";
         }
         return null;
       },
@@ -179,8 +180,8 @@ class _SignInFormState extends State<SignInForm> {
             !errors.contains(kInvalidEmailError)) {
           setState(() {
             errors.add(kInvalidEmailError);
-            return "";
           });
+          return "";
         }
         return null;
       },

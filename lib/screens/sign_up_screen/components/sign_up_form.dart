@@ -12,7 +12,7 @@ class _SignUpFormState extends State<SignUpForm> {
   Widget build(BuildContext context) {
     return Column(children: [
       SizedBox(
-        height: getProportionateScreenHeight(80),
+        height: getProportionateScreenHeight(50),
       ),
 
       //MARK: Text Field First Name
