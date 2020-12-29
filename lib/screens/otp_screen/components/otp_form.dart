@@ -104,7 +104,7 @@ class _OtpFormState extends State<OtpForm> {
             ],
           ),
           SizedBox(height: SizeConfig.screenHeight * 0.2),
-          DefaultButton(buttonText: "Continue", buttonPress: (){})
+          DefaultButton(buttonText: "Continue", buttonPress: () {})
         ],
       ),
     );
