@@ -136,7 +136,6 @@ class _SignInFormState extends State<SignInForm> {
           setState(() {
             errors.remove(kPassNullError);
           });
-          return "";
         }
         return null;
       },
@@ -175,7 +174,6 @@ class _SignInFormState extends State<SignInForm> {
           setState(() {
             errors.add(kEmailNullError);
           });
-          return "";
         } else if (!emailValidatorRegExp.hasMatch(value) &&
             !errors.contains(kInvalidEmailError)) {
           setState(() {
@@ -193,7 +191,9 @@ class _SignInFormState extends State<SignInForm> {
         suffixIcon: CustomSuffixIcon(image: "assets/icons/Mail.svg"),
         labelStyle: TextStyle(color: kTextColor),
       ),
-      style: TextStyle(decoration: TextDecoration.none),
+      style: TextStyle(
+        decoration: TextDecoration.none,
+      ),
     );
   }
 }
