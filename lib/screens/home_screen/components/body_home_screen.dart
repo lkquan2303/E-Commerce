@@ -1,4 +1,6 @@
+import 'package:e_commerce/config/size_config.dart';
 import 'package:flutter/material.dart';
+import 'discount_banner.dart';
 import 'home_header.dart';
 
 class BodyHomeScreen extends StatelessWidget {
@@ -9,9 +11,14 @@ class BodyHomeScreen extends StatelessWidget {
         child: Column(
           children: [
             HomeHeader(),
+            SizedBox(
+              height: getProportionateScreenHeight(20),
+            ),
+            DiscountBanner(),
           ],
         ),
       ),
     );
   }
 }
+
