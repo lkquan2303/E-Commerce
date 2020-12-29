@@ -1,4 +1,5 @@
 import 'package:e_commerce/config/size_config.dart';
+import 'package:e_commerce/screens/home_screen/components/popular_product.dart';
 import 'package:e_commerce/screens/home_screen/components/special_offer.dart';
 import 'package:flutter/material.dart';
 import 'categories_item.dart';
@@ -18,11 +19,12 @@ class BodyHomeScreen extends StatelessWidget {
             SizedBox(height: getProportionateScreenHeight(20)),
             CategoriesItem(),
             SizedBox(height: getProportionateScreenHeight(20)),
-            SpecialOffer()
+            SpecialOffer(),
+            SizedBox(height: getProportionateScreenHeight(20)),
+            PopularProduct()
           ],
         ),
       ),
     );
   }
 }
-
